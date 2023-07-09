@@ -13,7 +13,8 @@ import Foundation
 extension Pocket {
 
     public static let requestTokenUrl = URL(string: "https://getpocket.com/v3/oauth/request")!
-    public static let authorizeUrl = URL(string: "https://getpocket.com/auth/authorize")!
+    public static let authorizationUrl = URL(string: "https://getpocket.com/auth/authorize")!
+    public static let authorizeUrl = URL(string: "https://getpocket.com/v3/oauth/authorize")!
 
     private struct ObtainRequestTokenResponse: Decodable {
 
@@ -52,7 +53,7 @@ extension Pocket {
     }
 
     public func buildAuthorizationUrl(for requestToken: String, redirectingTo redirectUrl: URL) -> URL? {
-        guard var requestUrlComponents = URLComponents(url: Pocket.authorizeUrl, resolvingAgainstBaseURL: true) else {
+        guard var requestUrlComponents = URLComponents(url: Pocket.authorizationUrl, resolvingAgainstBaseURL: true) else {
             return nil
         }
 
