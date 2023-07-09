@@ -13,7 +13,7 @@ import Foundation
 extension Pocket {
 
     public static let requestTokenUrl = URL(string: "https://getpocket.com/v3/oauth/request")!
-    public static let authorizeUrl = URL(string: "https://getpocket.com/v3/oauth/authorize")!
+    public static let authorizeUrl = URL(string: "https://getpocket.com/auth/authorize")!
 
     private struct ObtainRequestTokenResponse: Decodable {
 
